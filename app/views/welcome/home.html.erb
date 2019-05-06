@@ -1,0 +1,16 @@
+<body onload="getRoute()">
+  <p>Hi, this is my home</p>
+  <p>Go to <%= link_to "Route", welcome_route_path %></p>
+</body>
+
+<script>
+  function getRoute() {
+    fetch(`https://www.mountainproject.com/data/get-routes?routeIds=105717718&key=90808083-308408407400lkdj98h4`)
+    .then((response)=> {
+      return response.json();
+    })
+    .then((myJson)=> {
+      console.log(myJson);
+    });
+  }
+</script>
